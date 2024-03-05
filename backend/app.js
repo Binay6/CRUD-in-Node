@@ -36,9 +36,10 @@ app.get("/",(req,res)=>{
     //res.send(new Buffer('wahoo')) ;
 }) ;
 //read
-app.get("/",(req,res)=>{
-    res.send("<h1>Hello World!</h1>") ;
-    //res.send(new Buffer('wahoo')) ;
+app.get("/api/v1/products",async (req,res)=>{
+    const products = await Product.find()
+
+    res.status(200).json({succes:true,products})
 }) ;
 
 app.listen(3000,()=>{
