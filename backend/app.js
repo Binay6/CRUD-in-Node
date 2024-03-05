@@ -6,7 +6,7 @@ const app = express() ;
 app.use(bodyParser.urlencoded({extended:true})) ;
 app.use(express.json()) ;
 
-mongoose.connect('mongodb+srv://binay3662:8rSsKVVCooxJWxN7@cluster0.dlhk7wc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{ 
+mongoose.connect('url',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -94,12 +94,3 @@ app.listen(3000,()=>{
     console.log("Server is working on http://localhost:3000")
 
 })
-
-/*   //just for fun get app.get("/api/v1/product/:id",async (req,res)=>{
-
-    let product = await Product.findById(req.params.id)
-    res.status(200).json({
-        success : true ,
-        product
-    })
-}) */
